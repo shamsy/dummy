@@ -13,10 +13,31 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+    return View::make('hello');
 });
 
-Route::get('users', function()
+/*
+ * Authentication form
+ */
+Route::get('login', function()
 {
-    return 'Users!';
+    return View::make('auth/login');
 });
+
+Route::get('forgot_password', function()
+{
+    return View::make('auth/forgot_password');
+});
+
+Route::get('password_reset', function()
+{
+    return View::make('auth/password_reset');
+});
+
+/*
+ * Validate The Submitted CSRF Token
+ */
+Route::post('register', array('before' => 'csrf', function()
+{
+    return 'You gave a valid CSRF token!';
+}));
