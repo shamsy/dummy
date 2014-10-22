@@ -29,6 +29,7 @@ Route::get('forgot_password', function()
     return View::make('auth/forgot_password');
 });
 
+<<<<<<< HEAD
 Route::get('password_reset', function()
 {
     return View::make('auth/password_reset');
@@ -42,4 +43,6 @@ Route::post('register', array('before' => 'csrf', function()
     return 'You gave a valid CSRF token!';
 }));
 
-//test change here
+
+//change for fix purpose
+
