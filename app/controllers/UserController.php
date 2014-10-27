@@ -12,8 +12,7 @@ class UserController
         $credentials = $this->getLoginCredentials();
        
         if (Auth::attempt($credentials)) {
-          die('here');
-          return Redirect::route("user/profile");
+            return Redirect::to("user/profile");
         }
         
         return Redirect::back()->withErrors([
